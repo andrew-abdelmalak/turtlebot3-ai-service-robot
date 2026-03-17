@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+*.egg
+
+# ROS 2 build artifacts
+build/
+install/
+log/
+
+# Fast Downward
+downward/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Planner temporaries
+*.sas
+output/*.sas

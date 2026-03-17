@@ -1,0 +1,21 @@
+INFO     planner time limit: None
+INFO     planner memory limit: None
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     translator command line string: /usr/bin/python3 -m translate domain/domain.pddl problems/problem.pddl --sas-file output.sas
+Parsing...
+Parsing task
+	->Parsing goal
+	->Parsing condition
+	->Parsing literal
+Undefined object
+Got: dining
+translate exit code: 31
+
+Driver aborting after translate
+INFO     Planner time: 0.06s
+
+b"Warning: name clash between type and predicate 'room'.\nInterpreting as predicate in conditions.\nWarning: name clash between type and predicate 'object'.\nInterpreting as predicate in conditions.\n"

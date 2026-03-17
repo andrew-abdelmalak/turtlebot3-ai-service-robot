@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="default">
+
+    <!-- basic ground + sun -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- your custom house model -->
+    <include>
+      <uri>model://tb3_house_custom</uri>
+      <name>tb3_house_custom</name>
+      <static>true</static>
+    </include>
+
+    <!-- optional scene/physics -->
+    <scene>
+      <shadows>false</shadows>
+    </scene>
+    <physics type="ode">
+      <real_time_update_rate>1000.0</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+    </physics>
+
+  </world>
+</sdf>
+
