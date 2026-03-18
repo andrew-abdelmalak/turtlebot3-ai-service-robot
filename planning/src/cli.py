@@ -1,5 +1,4 @@
 import copy
-import sys
 
 # --- IMPORT THE NEW EXECUTOR ---
 from executor import execute_action 
@@ -30,7 +29,7 @@ def parse_goal_input(goal):
 
 
 def run_cli(kb, world):
-    print("Welcome to the Robot AI CLI (Milestone 3 Integration)")
+    print("Welcome to the TurtleBot3 AI Service Robot — Task Planning CLI")
     
     while True:
         print("\n--- Current KB ---")

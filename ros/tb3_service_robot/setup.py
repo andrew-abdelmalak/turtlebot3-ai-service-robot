@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'milestone1_code'
+package_name = 'tb3_service_robot'
 
 setup(
     name=package_name,
@@ -24,8 +24,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-		'navigation_node = milestone1_code.navigation_node:main',
-      		'gripper_node = milestone1_code.gripper_node:main',
+            'navigation_node = tb3_service_robot.navigation_node:main',
+            'gripper_node = tb3_service_robot.gripper_node:main',
         ],
     },
 )

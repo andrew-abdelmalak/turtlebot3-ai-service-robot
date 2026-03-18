@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 import rclpy
-import sys
-import math
-from rclpy.node import Node
 from nav2_simple_commander.robot_navigator import BasicNavigator, TaskResult
 from geometry_msgs.msg import PoseStamped
 from tf_transformations import quaternion_from_euler

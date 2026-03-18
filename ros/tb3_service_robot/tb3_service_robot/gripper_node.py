@@ -97,7 +97,7 @@ def main(args=None):
         goal_handle = future.result()
 
         if not goal_handle.accepted:
-            print(f"    Action rejected!")
+            print("    Action rejected!")
             break
         
         # 2. Wait for the result (motion to finish)

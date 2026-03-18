@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>milestone1_code</name>
+  <name>tb3_service_robot</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="daniel-boules@todo.todo">daniel-boules</maintainer>
-  <license>TODO: License declaration</license>
+  <description>ROS 2 navigation and gripper control nodes for TurtleBot3 AI service robot</description>
+  <maintainer email="andrew.abdelmalak3@gmail.com">Andrew Abdelmalak</maintainer>
+  <license>MIT</license>
 
   <depend>rclpy</depend>
   <depend>nav2_simple_commander</depend>

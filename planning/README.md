@@ -12,16 +12,14 @@ Apartment planning playground built around Fast Downward. The code models a smal
 - `domain/domain.pddl`: Domain definition with `move`, `pick`, and `place` actions (generated automatically).
 - `problems/problem.pddl`: Sample problem; rewritten on each CLI run.
 - `output/`: Planner artifacts (`plan.soln`, `plan.txt`, and the latest `sas_plan` if produced).
-- `downward/`: Vendored Fast Downward source; use its README to build/install the `fast-downward` binary.
-- `milestone_description/`, `report/`: Assignment brief and submitted report (PDF + assets).
 
 ## Requirements
 - Python 3.8+.
-- Fast Downward available as `fast-downward` on your `PATH` (or adjust `src/planner.py` to point at `downward/fast-downward.py`).
+- Fast Downward available as `fast-downward` on your `PATH`.
 
 ## Running
-1. (Optional) Build Fast Downward in `downward/` following `downward/README.md`, then add the produced `fast-downward` wrapper/binary to your `PATH`.
-2. From the repo root: `python src/main.py`
+1. Install Fast Downward and add the `fast-downward` binary to your `PATH`.
+2. From the repo root: `cd planning && python src/main.py`
 3. At the prompt, enter goals such as:
    - `robot-at kitchen`
    - `at cup bedroom`
