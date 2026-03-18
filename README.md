@@ -13,6 +13,22 @@ An AI-powered service robot that combines **ROS 2 navigation and manipulation** 
 </p>
 <p align="center"><em>Navigation in RViz: global planner (red line) generates a path from Dining Room to Kitchen, overlaid on the costmap with LIDAR scan (green).</em></p>
 
+---
+
+## Table of Contents
+
+- [Architecture](#architecture)
+- [Results](#results)
+- [Repository Layout](#repository-layout)
+- [Prerequisites](#prerequisites)
+- [Usage](#usage)
+- [World Model](#world-model)
+- [Authors](#authors)
+- [References](#references)
+- [License](#license)
+
+---
+
 ## Architecture
 
 The system has three layers:
@@ -167,13 +183,13 @@ The apartment has **6 rooms** connected by doorways. Navigation goals use the fo
 
 ## Authors
 
-| Name | GitHub |
-|------|--------|
-| Andrew Abdelmalak | [@andrew-abdelmalak](https://github.com/andrew-abdelmalak) |
-| Daniel Boules | [@daniel-boules](https://github.com/daniel-boules) |
-| David Girgis | [@davidlouiss](https://github.com/davidlouiss) |
-| Samir Yacoub | [@SamirYacoub](https://github.com/SamirYacoub) |
-| Youssef Youssry | |
+| Name | Affiliation |
+|------|-------------|
+| **Andrew Abdelmalak** | Mechatronics Engineering, GUC |
+| **Daniel Boules** | Mechatronics Engineering, GUC |
+| **David Girgis** | Mechatronics Engineering, GUC |
+| **Samir Yacoub** | Mechatronics Engineering, GUC |
+| **Youssef Youssry** | Mechatronics Engineering, GUC |
 
 ## Acknowledgments
 
