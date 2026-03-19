@@ -3,6 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![ROS 2](https://img.shields.io/badge/ROS_2-Humble-blue)](https://docs.ros.org/en/humble/)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue)](https://www.python.org/)
+[![CI](https://github.com/andrew-abdelmalak/turtlebot3-ai-service-robot/actions/workflows/lint.yml/badge.svg)](https://github.com/andrew-abdelmalak/turtlebot3-ai-service-robot/actions)
 
 An AI-powered service robot that combines **ROS 2 navigation and manipulation** with **PDDL-based task planning**. A TurtleBot3 with an OpenManipulator gripper navigates a simulated apartment in Gazebo, autonomously picking and placing objects across six rooms based on high-level goal specifications.
 

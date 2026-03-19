@@ -1,28 +1,69 @@
-# Python
-__pycache__/
-*.py[cod]
-*.egg-info/
-dist/
-*.egg
+# ========================
+# OS Generated Files
+# ========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+__MACOSX/
 
-# ROS 2 build artifacts
-build/
-install/
-log/
-
-# Fast Downward
-downward/
-
-# IDE
+# ========================
+# IDE / Editor
+# ========================
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
+*.sublime-project
+*.sublime-workspace
 
-# OS
-.DS_Store
-Thumbs.db
+# ========================
+# Python
+# ========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+.env
+.venv/
+venv/
 
-# Planner temporaries
+# ========================
+# ROS 2 / Colcon
+# ========================
+build/
+install/
+log/
+.catkin_workspace
+.catkin_tools/
+
+# ========================
+# Fast Downward / Planner
+# ========================
+downward/
 *.sas
 output/*.sas
+
+# ========================
+# Logs & Temporary
+# ========================
+*.log
+*.tmp
+*.bak
+
+# ========================
+# Archives
+# ========================
+*.zip
+*.tar.gz
+*.tar.bz2
+*.rar
+*.7z
