@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: Lint, test, and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up uv and Python
+        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          enable-cache: true
+
+      - name: Install locked dependencies
+        run: uv sync --locked --all-groups
+
+      - name: Lint and check formatting
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+
+      - name: Set up Fast Downward container wrapper
+        run: |
+          docker pull aibasel/downward@sha256:328732c5cb87e8c34f477a88a4f99977b6ea91ca5c1e859b886b5334c42d80e8
+          mkdir -p "$RUNNER_TEMP/bin"
+          cat <<'EOF' > "$RUNNER_TEMP/bin/fast-downward"
+          #!/usr/bin/env bash
+          exec docker run --rm --network=none \
+            -u "$(id -u):$(id -g)" \
+            -v "$PWD:/work" \
+            -w /work \
+            aibasel/downward@sha256:328732c5cb87e8c34f477a88a4f99977b6ea91ca5c1e859b886b5334c42d80e8 \
+            "$@"
+          EOF
+          chmod +x "$RUNNER_TEMP/bin/fast-downward"
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
+
+      - name: Run unit and integration tests
+        run: uv run pytest -v
+
+      - name: Verify CLI dry-run produces clean git tree
+        run: |
+          uv run tb3-planner --dry-run --goal "at cup storage"
+          git diff --exit-code
+
+      - name: Build and test ROS 2 package (Humble)
+        run: |
+          docker run --rm --network=none \
+            -u "$(id -u):$(id -g)" \
+            -v "$PWD/ros/tb3_service_robot:/ws/src/tb3_service_robot:ro" \
+            -w /ws \
+            ros:humble-ros-base@sha256:d9f14e84747bea639a65e00cf871d2c68ae55385d2acf6239614de0cadb41dcc \
+            bash -c "source /opt/ros/humble/setup.bash && \
+              colcon --log-base /tmp/log build --build-base /tmp/build --install-base /tmp/install && \
+              colcon --log-base /tmp/log test --build-base /tmp/build --install-base /tmp/install && \
+              colcon --log-base /tmp/log test-result --test-result-base /tmp/build --verbose"
