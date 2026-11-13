@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/andrew-abdelmalak/turtlebot3-ai-service-robot/security/advisories/new
+    about: Report security issues privately instead of opening a public issue
+  - name: Support guide
+    url: https://github.com/andrew-abdelmalak/turtlebot3-ai-service-robot/blob/main/.github/SUPPORT.md
+    about: Documentation and setup references before opening a question

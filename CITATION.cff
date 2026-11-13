@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this software or paper, please cite it using the metadata below."
+type: software
+title: "TurtleBot3 AI Service Robot"
+abstract: "PDDL task planner (Fast Downward A* + LM-Cut) integrated with ROS 2 Nav2 navigation and OpenManipulator pick-and-place on a TurtleBot3 in Gazebo, using closed-loop Knowledge Base updates."
+version: "1.1.0"
+date-released: "2026-11-14"
+license: MIT
+repository-code: "https://github.com/andrew-abdelmalak/turtlebot3-ai-service-robot"
+authors:
+  - family-names: Abdelmalak
+    given-names: Andrew Khalil
+  - family-names: Boules
+    given-names: Daniel George
+  - family-names: Girgis
+    given-names: David Louis
+  - family-names: Yacoub
+    given-names: Samir Sameh
+  - family-names: Youssry
+    given-names: Youssef
+preferred-citation:
+  type: conference-paper
+  title: "Integrated Symbolic Planning and Robotic Execution: A PDDL-Based Task Planner with ROS 2 and Gazebo"
+  year: 2025
+  authors:
+    - family-names: Abdelmalak
+      given-names: Andrew Khalil
+    - family-names: Boules
+      given-names: Daniel George
+    - family-names: Girgis
+      given-names: David Louis
+    - family-names: Yacoub
+      given-names: Samir Sameh
+    - family-names: Youssry
+      given-names: Youssef
+  institution:
+    name: "German University in Cairo (GUC)"
