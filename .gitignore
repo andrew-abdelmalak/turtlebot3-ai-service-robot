@@ -23,7 +23,7 @@ __MACOSX/
 *.sublime-workspace
 
 # ========================
-# Python
+# Python & Tooling
 # ========================
 __pycache__/
 *.py[cod]
@@ -35,6 +35,8 @@ build/
 .env
 .venv/
 venv/
+.pytest_cache/
+.ruff_cache/
 
 # ========================
 # ROS 2 / Colcon
@@ -50,7 +52,21 @@ log/
 # ========================
 downward/
 *.sas
+sas_plan*
 output/*.sas
+planning/output/
+
+# ========================
+# LaTeX Build Artifacts
+# ========================
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.toc
 
 # ========================
 # Logs & Temporary
