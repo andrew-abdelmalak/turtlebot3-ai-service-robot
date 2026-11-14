@@ -35,12 +35,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/spec-2
 
 - Duplicate `planning/src/domain/domain.pddl` and tracked scratch artifacts under `planning/output/`.
 
-## [1.0.0] - 2026-03-18
+## [1.0.0] - 2026-03-19
 
 ### Added
 
 - Initial PDDL planning pipeline (`planning/`), ROS 2 Humble navigation and gripper client nodes (`ros/tb3_service_robot/`), custom Gazebo world and SLAM map assets (`ros/tb3_course_assets/`), and IEEE conference paper (`docs/AI_Robotics_Planning.pdf`).
 
-[Unreleased]: https://github.com/andrew-abdelmalak/turtlebot3-ai-service-robot/compare/v1.0.0...HEAD
-[1.1.0]: https://github.com/andrew-abdelmalak/turtlebot3-ai-service-robot/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/andrew-abdelmalak/turtlebot3-ai-service-robot/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/andrew-abdelmalak/turtlebot3-ai-service-robot/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/andrew-abdelmalak/turtlebot3-ai-service-robot/releases/tag/v1.0.0

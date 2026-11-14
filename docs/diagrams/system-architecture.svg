@@ -60,7 +60,7 @@
   <rect x="680" y="278" width="270" height="78" rx="10" fill="#eff6ff" stroke="#cbd5e1" stroke-width="1.5"/>
   <text x="815" y="306" text-anchor="middle" font-family='ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' font-size="15" font-weight="700" fill="#0f172a">Gazebo House Simulation</text>
   <text x="815" y="327" text-anchor="middle" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, monospace' font-size="11" fill="#475569">my_house.world + map.yaml</text>
-  <text x="815" y="344" text-anchor="middle" font-family='ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' font-size="11" fill="#475569">TurtleBot3 Waffle Pi + OpenManipulator</text>
+  <text x="815" y="344" text-anchor="middle" font-family='ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' font-size="11" fill="#475569">TurtleBot3 + OpenManipulator</text>
 
   <!-- Arrows -->
   <line x1="160" y1="120" x2="160" y2="146" stroke="#1d4ed8" stroke-width="2" marker-end="url(#arrow-light)"/>

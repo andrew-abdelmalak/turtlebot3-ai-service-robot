@@ -171,7 +171,7 @@ All six room coordinates in [`planning/src/world_model.py`](planning/src/world_m
 
 ### What is verified
 
-- **Gazebo Classic simulation (original project evaluation)**: We validated multi-room Nav2 navigation (`0.30` m tolerance), three-phase OpenManipulator pick-and-place, and end-to-end execution of `at cup storage` in Gazebo with a simulated TurtleBot3 Waffle Pi and OpenManipulator arm (documented in [our paper](docs/AI_Robotics_Planning.pdf)).
+- **Gazebo Classic simulation (original project evaluation)**: We validated multi-room Nav2 navigation (`0.30` m tolerance), three-phase OpenManipulator pick-and-place, and end-to-end execution of `at cup storage` in Gazebo with a simulated TurtleBot3 base and OpenManipulator arm (documented in [our paper](docs/AI_Robotics_Planning.pdf)).
 - **Automated CI checks (run on every pull request without hardware or Gazebo GUI)**:
   - `uv run ruff check .` and `uv run ruff format --check .`
   - `uv run pytest -v`: 19 tests covering KB preconditions, PDDL generation, goal validation, plan parsing, closed-loop failure handling, stubbed ROS 2 node exit codes, SLAM occupancy-grid coordinate validation, XML/SDF well-formedness, and real Fast Downward integration runs.
@@ -244,11 +244,12 @@ Developed for the Artificial Intelligence for Robotics course (`MCTR 912`, Winte
 If you use this repository or paper, cite it via [`CITATION.cff`](CITATION.cff) or the BibTeX entry below:
 
 ```bibtex
-@inproceedings{abdelmalak2025turtlebot3,
+@misc{abdelmalak2025turtlebot3,
   title={Integrated Symbolic Planning and Robotic Execution: A PDDL-Based Task Planner with ROS~2 and Gazebo},
   author={Abdelmalak, Andrew Khalil and Boules, Daniel George and Girgis, David Louis and Yacoub, Samir Sameh and Youssry, Youssef},
   year={2025},
-  institution={German University in Cairo (GUC)}
+  howpublished={\url{https://github.com/andrew-abdelmalak/turtlebot3-ai-service-robot}},
+  note={German University in Cairo, course MCTR 912}
 }
 ```
 
