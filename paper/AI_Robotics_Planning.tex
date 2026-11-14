@@ -153,7 +153,7 @@ Gripper & Action Client & \texttt{/gripper\_controller/...} \\
 
 Two launch files orchestrate the simulation:
 \begin{itemize}
-\item \textbf{Gazebo Launch}: Loads the apartment world (\texttt{my\_house.world} with the custom \texttt{tb3\_house\_custom} model based on \texttt{turtlebot3\_house.world}), spawns the robot model at configurable coordinates, and publishes TF transforms.
+\item \textbf{Gazebo Launch}: Loads the TurtleBot3 house environment, spawns the robot model at configurable coordinates, and publishes TF transforms. The repository also provides a custom apartment world (\texttt{my\_house.world}, model \texttt{tb3\_house\_custom}) in \texttt{ros/tb3\_course\_assets/}.
 \item \textbf{Navigation Launch}: Brings up the Nav2 stack~\cite{nav2} (AMCL localizer, global/local planners), loads the custom SLAM occupancy grid (\texttt{map.yaml}), and starts RViz2 for visualization.
 \end{itemize}
 
