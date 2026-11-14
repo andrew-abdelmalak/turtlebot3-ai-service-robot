@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640" role="img" aria-label="TurtleBot3 AI Service Robot social preview card">
+  <defs>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#13223b"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#bg-grad)"/>
+  <rect width="1280" height="640" fill="url(#grid)" opacity="0.65"/>
+
+  <!-- Top badge -->
+  <rect x="80" y="84" width="320" height="36" rx="18" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="240" y="107" text-anchor="middle" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, monospace' font-size="15" font-weight="600" fill="#93c5fd">PDDL + ROS 2 HUMBLE + GAZEBO</text>
+
+  <!-- Main Title -->
+  <text x="80" y="206" font-family='ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' font-size="64" font-weight="800" fill="#f8fafc">TurtleBot3 AI</text>
+  <text x="80" y="278" font-family='ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' font-size="64" font-weight="800" fill="#60a5fa">Service Robot</text>
+
+  <!-- Tagline -->
+  <text x="80" y="346" font-family='ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' font-size="28" fill="#cbd5e1">Fast Downward A* planning integrated with Nav2</text>
+  <text x="80" y="384" font-family='ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' font-size="28" fill="#cbd5e1">and OpenManipulator closed-loop execution.</text>
+
+  <!-- 3 metric pills -->
+  <rect x="80" y="436" width="170" height="64" rx="10" fill="#162235" stroke="#334155" stroke-width="1.5"/>
+  <text x="165" y="465" text-anchor="middle" font-family='ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' font-size="22" font-weight="700" fill="#34d399">6 Rooms</text>
+  <text x="165" y="487" text-anchor="middle" font-family='ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' font-size="14" fill="#94a3b8">SLAM verified</text>
+
+  <rect x="268" y="436" width="180" height="64" rx="10" fill="#162235" stroke="#334155" stroke-width="1.5"/>
+  <text x="358" y="465" text-anchor="middle" font-family='ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' font-size="22" font-weight="700" fill="#60a5fa">LM-Cut A*</text>
+  <text x="358" y="487" text-anchor="middle" font-family='ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' font-size="14" fill="#94a3b8">Optimal PDDL</text>
+
+  <rect x="466" y="436" width="190" height="64" rx="10" fill="#162235" stroke="#334155" stroke-width="1.5"/>
+  <text x="561" y="465" text-anchor="middle" font-family='ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' font-size="22" font-weight="700" fill="#f59e0b">Closed-Loop</text>
+  <text x="561" y="487" text-anchor="middle" font-family='ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' font-size="14" fill="#94a3b8">KB confirmation</text>
+
+  <!-- Right-side stylized graph card -->
+  <rect x="780" y="100" width="420" height="400" rx="18" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+  <line x1="870" y1="210" x2="870" y2="390" stroke="#3b82f6" stroke-width="4"/>
+  <line x1="870" y1="210" x2="990" y2="300" stroke="#3b82f6" stroke-width="4"/>
+  <line x1="990" y1="300" x2="1110" y2="300" stroke="#3b82f6" stroke-width="4"/>
+  <line x1="1110" y1="300" x2="1110" y2="180" stroke="#475569" stroke-width="3" stroke-dasharray="6,5"/>
+  <line x1="1110" y1="300" x2="1110" y2="415" stroke="#3b82f6" stroke-width="4"/>
+
+  <circle cx="870" cy="210" r="24" fill="#1e293b" stroke="#60a5fa" stroke-width="3"/>
+  <circle cx="870" cy="390" r="24" fill="#172554" stroke="#60a5fa" stroke-width="3"/>
+  <circle cx="990" cy="300" r="28" fill="#064e3b" stroke="#34d399" stroke-width="3"/>
+  <circle cx="1110" cy="300" r="24" fill="#1e293b" stroke="#60a5fa" stroke-width="3"/>
+  <circle cx="1110" cy="180" r="20" fill="#1e293b" stroke="#64748b" stroke-width="2.5"/>
+  <circle cx="1110" cy="415" r="24" fill="#172554" stroke="#60a5fa" stroke-width="3"/>
+
+  <text x="870" y="172" text-anchor="middle" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, monospace' font-size="13" fill="#94a3b8">bedroom</text>
+  <text x="870" y="438" text-anchor="middle" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, monospace' font-size="13" fill="#93c5fd">storage</text>
+  <text x="990" y="348" text-anchor="middle" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, monospace' font-size="13" fill="#34d399">livingroom</text>
+  <text x="1110" y="148" text-anchor="middle" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, monospace' font-size="13" fill="#94a3b8">bathroom</text>
+  <text x="1110" y="266" text-anchor="middle" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, monospace' font-size="13" fill="#94a3b8">diningroom</text>
+  <text x="1110" y="458" text-anchor="middle" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, monospace' font-size="13" fill="#93c5fd">kitchen</text>
+
+  <!-- Repo footer -->
+  <text x="80" y="576" font-family='ui-monospace, SFMono-Regular, Menlo, Consolas, monospace' font-size="18" fill="#64748b">github.com/andrew-abdelmalak/turtlebot3-ai-service-robot</text>
+</svg>

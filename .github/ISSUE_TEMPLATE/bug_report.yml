@@ -1,0 +1,24 @@
+name: Bug report
+description: Report a bug in the PDDL planner, executor, or ROS 2 nodes
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened
+      description: Describe the unexpected behavior or failure.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include the CLI goal or ros2 command and environment (dry-run vs Gazebo).
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs or planner output
+      description: Paste any terminal output or planning/output/plan.txt contents.
+      render: text

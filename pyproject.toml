@@ -1,0 +1,43 @@
+[project]
+name = "turtlebot3-ai-service-robot"
+version = "1.1.0"
+description = "PDDL task planner (Fast Downward A* + LM-Cut) integrated with ROS 2 Nav2 navigation and OpenManipulator pick-and-place"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+tb3-planner = "planning.src.main:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+    "ruff>=0.14.0",
+]
+
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["planning"]
+
+[tool.uv]
+exclude-newer = "14 days"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "FURB", "PLW", "EXE"]
+
+[tool.ruff.lint.per-file-ignores]
+# ROS 2 package uses ament_flake8 import ordering (max line length 99).
+"ros/tb3_service_robot/**/*.py" = ["I001"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-ra"

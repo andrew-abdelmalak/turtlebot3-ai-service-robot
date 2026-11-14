@@ -1,15 +1,24 @@
-rooms = ["kitchen", "diningroom", "livingroom", "bedroom", "storage", "bathroom"]
+"""Apartment world model: rooms, Gazebo coordinates, doorway graph, and initial objects."""
 
-coordinates = {
-    "storage": (-4.5, -1.5),    # bottom-left 
-    "livingroom": (-1.0, 1.5),  # top-middle
-    "diningroom": (6.0, 1.0),   # top-right
-    "bathroom": (3.0, 5.0),     # central small enclosed room
-    "bedroom": (-4.5, 3.5),     # top-left 
-    "kitchen": (8.5, -1.5)      # bottom-right
+rooms: list[str] = [
+    "kitchen",
+    "diningroom",
+    "livingroom",
+    "bedroom",
+    "storage",
+    "bathroom",
+]
+
+coordinates: dict[str, tuple[float, float]] = {
+    "storage": (-4.5, -1.5),
+    "livingroom": (-1.0, 1.5),
+    "diningroom": (6.0, 1.0),
+    "bathroom": (3.0, 5.0),
+    "bedroom": (-4.5, 3.5),
+    "kitchen": (8.5, -1.5),
 }
 
-connected = [
+connected: list[tuple[str, str]] = [
     ("storage", "bedroom"),
     ("bedroom", "storage"),
     ("livingroom", "bedroom"),
@@ -19,10 +28,10 @@ connected = [
     ("bathroom", "diningroom"),
     ("diningroom", "bathroom"),
     ("diningroom", "kitchen"),
-    ("kitchen", "diningroom")
+    ("kitchen", "diningroom"),
 ]
 
-objects = {
+objects: dict[str, str] = {
     "cup": "kitchen",
     "pan": "kitchen",
     "plate": "diningroom",
@@ -32,5 +41,5 @@ objects = {
     "book": "bedroom",
     "phone": "bedroom",
     "keys": "storage",
-    "towel": "bathroom"
+    "towel": "bathroom",
 }
