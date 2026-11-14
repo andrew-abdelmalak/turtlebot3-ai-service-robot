@@ -174,7 +174,7 @@ All six room coordinates in [`planning/src/world_model.py`](planning/src/world_m
 - **Gazebo Classic simulation (original project evaluation)**: We validated multi-room Nav2 navigation (`0.30` m tolerance), three-phase OpenManipulator pick-and-place, and end-to-end execution of `at cup storage` in Gazebo with a simulated TurtleBot3 base and OpenManipulator arm (documented in [our paper](docs/AI_Robotics_Planning.pdf)).
 - **Automated CI checks (run on every pull request without hardware or Gazebo GUI)**:
   - `uv run ruff check .` and `uv run ruff format --check .`
-  - `uv run pytest -v`: 19 tests covering KB preconditions, PDDL generation, goal validation, plan parsing, closed-loop failure handling, stubbed ROS 2 node exit codes, SLAM occupancy-grid coordinate validation, XML/SDF well-formedness, and real Fast Downward integration runs.
+  - `uv run pytest -v`: 21 tests covering KB preconditions, PDDL generation, goal validation, plan parsing, closed-loop failure handling, stubbed ROS 2 node exit codes, SLAM occupancy-grid coordinate validation, XML/SDF well-formedness, and real Fast Downward integration runs.
   - `colcon build` and `colcon test` inside a pinned `ros:humble-ros-base` container (`test_copyright`, `test_flake8`, `test_pep257`).
   - TeX Live 2025 PDF build (`latexmk -pdf`) of `paper/AI_Robotics_Planning.tex`.
 
@@ -192,7 +192,7 @@ All six room coordinates in [`planning/src/world_model.py`](planning/src/world_m
 .
 ├── .github/
 │   ├── workflows/
-│   │   ├── ci.yml                  # Ruff, 19 pytest + Fast Downward tests, ROS 2 Humble colcon build/test
+│   │   ├── ci.yml                  # Ruff, 21 pytest + Fast Downward tests, ROS 2 Humble colcon build/test
 │   │   └── paper.yml               # TeX Live 2025 pdfLaTeX build for paper/
 │   ├── ISSUE_TEMPLATE/             # Bug report and question forms
 │   ├── CONTRIBUTING.md

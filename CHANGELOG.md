@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/spec-2
 ### Added
 
 - Non-interactive `--goal` and simulation-free `--dry-run` (`--no-ros`) CLI flags via `tb3-planner` (`pyproject.toml`, `planning/src/main.py`).
-- Unit and Fast Downward integration test suite (`tests/`, 19 tests) verifying Knowledge Base transitions, PDDL generation, goal validation, plan parsing, closed-loop failure aborts, stubbed ROS 2 node exit codes, and SLAM occupancy-grid coordinate alignment.
+- Unit and Fast Downward integration test suite (`tests/`, 21 tests) verifying Knowledge Base transitions, PDDL generation, goal validation, plan parsing, closed-loop failure aborts, stubbed ROS 2 node exit codes, and SLAM occupancy-grid coordinate alignment.
 - Tracked LaTeX source under `paper/` matching Overleaf and compiled in CI with TeX Live 2025.
 - Light and dark architecture and apartment topology diagrams (`docs/diagrams/`), community health files (`.github/`), `CITATION.cff`, and Dependabot configuration.
 
