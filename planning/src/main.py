@@ -12,7 +12,6 @@ if __package__ in (None, ""):
 
 from planning.src.cli import run_cli
 from planning.src.kb import KnowledgeBase
-from planning.src.pddl_generator import DEFAULT_DOMAIN_PATH, DEFAULT_PROBLEM_PATH
 from planning.src.planner import DEFAULT_OUTPUT_DIR
 from planning.src.world_model import connected, objects, rooms
 
@@ -58,14 +57,15 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     world = World()
     kb = KnowledgeBase(world)
+    output_dir = Path(args.output_dir)
     return run_cli(
         kb,
         world,
         dry_run=args.dry_run,
         initial_goal=args.goal,
-        domain_path=DEFAULT_DOMAIN_PATH,
-        problem_path=DEFAULT_PROBLEM_PATH,
-        output_dir=args.output_dir,
+        domain_path=output_dir / "domain.pddl",
+        problem_path=output_dir / "problem.pddl",
+        output_dir=output_dir,
     )
 
 

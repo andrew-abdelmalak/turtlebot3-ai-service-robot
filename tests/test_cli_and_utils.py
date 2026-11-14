@@ -8,6 +8,7 @@ from unittest.mock import patch
 from planning.src.cli import parse_goal_input, plan_and_execute_goal, run_cli
 from planning.src.kb import KnowledgeBase
 from planning.src.main import World, main
+from planning.src.pddl_generator import DEFAULT_DOMAIN_PATH, DEFAULT_PROBLEM_PATH
 from planning.src.utils import parse_plan
 
 
@@ -134,3 +135,22 @@ def test_cli_non_interactive_dry_run_and_eof_exit(tmp_path: Path) -> None:
 
     with patch("builtins.input", side_effect=EOFError):
         assert run_cli(KnowledgeBase(World()), dry_run=True) == 0
+
+
+def test_dry_run_non_canonical_goal_keeps_tracked_pddl_clean(tmp_path: Path) -> None:
+    """Verify dry-run with a non-canonical goal writes to output_dir, not tracked PDDL files."""
+    canonical_domain = DEFAULT_DOMAIN_PATH.read_text(encoding="utf-8")
+    canonical_problem = DEFAULT_PROBLEM_PATH.read_text(encoding="utf-8")
+    out_dir = tmp_path / "out"
+
+    with patch(
+        "planning.src.cli.run_planner",
+        return_value=(0, "(move livingroom diningroom)\n(move diningroom kitchen)\n"),
+    ):
+        code = main(["--dry-run", "--goal", "robot-at kitchen", "--output-dir", str(out_dir)])
+
+    assert code == 0
+    assert (out_dir / "domain.pddl").exists()
+    assert "(robot-at kitchen)" in (out_dir / "problem.pddl").read_text(encoding="utf-8")
+    assert DEFAULT_DOMAIN_PATH.read_text(encoding="utf-8") == canonical_domain
+    assert DEFAULT_PROBLEM_PATH.read_text(encoding="utf-8") == canonical_problem

@@ -3,13 +3,14 @@
 from __future__ import annotations
 
 import shutil
+import subprocess
 from pathlib import Path
 
 import pytest
 
 from planning.src.cli import plan_and_execute_goal
 from planning.src.kb import KnowledgeBase
-from planning.src.main import World
+from planning.src.main import World, main
 from planning.src.pddl_generator import (
     DEFAULT_DOMAIN_PATH,
     DEFAULT_PROBLEM_PATH,
@@ -91,3 +92,25 @@ def test_fast_downward_solves_all_goal_types_and_holding_replan(tmp_path: Path) 
     assert kb.robot_room == "storage"
     assert kb.objects["bottle"] == "livingroom"
     assert kb.objects["cup"] == "storage"
+
+
+def test_cli_dry_run_non_canonical_goal_leaves_tracked_planning_clean(tmp_path: Path) -> None:
+    """Run main() with real Fast Downward on a non-canonical goal without dirtying planning/."""
+    canonical_problem = DEFAULT_PROBLEM_PATH.read_text(encoding="utf-8")
+    out_dir = tmp_path / "out"
+
+    code = main(["--dry-run", "--goal", "robot-at kitchen", "--output-dir", str(out_dir)])
+    assert code == 0
+    assert (out_dir / "problem.pddl").exists()
+    assert DEFAULT_PROBLEM_PATH.read_text(encoding="utf-8") == canonical_problem
+
+    repo_root = Path(__file__).resolve().parent.parent
+    if (repo_root / ".git").exists():
+        diff_res = subprocess.run(
+            ["git", "diff", "--exit-code", "--", "planning/domain", "planning/problems"],
+            cwd=repo_root,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        assert diff_res.returncode == 0, diff_res.stdout + diff_res.stderr

@@ -57,6 +57,7 @@ jobs:
       - name: Verify CLI dry-run produces clean git tree
         run: |
           uv run tb3-planner --dry-run --goal "at cup storage"
+          uv run tb3-planner --dry-run --goal "robot-at kitchen"
           git diff --exit-code
 
       - name: Build and test ROS 2 package (Humble)

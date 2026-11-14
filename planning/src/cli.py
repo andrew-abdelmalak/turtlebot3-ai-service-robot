@@ -9,8 +9,6 @@ from pathlib import Path
 from planning.src.executor import execute_action
 from planning.src.kb import KnowledgeBase
 from planning.src.pddl_generator import (
-    DEFAULT_DOMAIN_PATH,
-    DEFAULT_PROBLEM_PATH,
     write_domain,
     write_problem,
 )
@@ -83,8 +81,8 @@ def plan_and_execute_goal(
     *,
     dry_run: bool = False,
     interactive: bool = True,
-    domain_path: str | Path = DEFAULT_DOMAIN_PATH,
-    problem_path: str | Path = DEFAULT_PROBLEM_PATH,
+    domain_path: str | Path | None = None,
+    problem_path: str | Path | None = None,
     output_dir: str | Path = DEFAULT_OUTPUT_DIR,
 ) -> bool:
     """Plan and execute a single goal string, returning ``True`` on success."""
@@ -98,14 +96,18 @@ def plan_and_execute_goal(
         )
         return False
 
+    out_dir = Path(output_dir)
+    resolved_domain_path = out_dir / "domain.pddl" if domain_path is None else Path(domain_path)
+    resolved_problem_path = out_dir / "problem.pddl" if problem_path is None else Path(problem_path)
+
     goal_pddl = f"(and {parsed_goal})"
-    write_domain(domain_path)
-    write_problem(kb, goal_pddl, problem_path)
+    write_domain(resolved_domain_path)
+    write_problem(kb, goal_pddl, resolved_problem_path)
 
     status, plan_output = run_planner(
-        domain_path=domain_path,
-        problem_path=problem_path,
-        output_dir=output_dir,
+        domain_path=resolved_domain_path,
+        problem_path=resolved_problem_path,
+        output_dir=out_dir,
     )
     plan = parse_plan(plan_output)
 
@@ -114,11 +116,11 @@ def plan_and_execute_goal(
         drop_step = ["place", kb.holding, kb.robot_room]
         temp_kb = copy.deepcopy(kb)
         temp_kb.apply_place(temp_kb.holding)
-        write_problem(temp_kb, goal_pddl, problem_path)
+        write_problem(temp_kb, goal_pddl, resolved_problem_path)
         status, plan_output = run_planner(
-            domain_path=domain_path,
-            problem_path=problem_path,
-            output_dir=output_dir,
+            domain_path=resolved_domain_path,
+            problem_path=resolved_problem_path,
+            output_dir=out_dir,
         )
         replanned = parse_plan(plan_output)
         if status == 0 and replanned:
@@ -156,8 +158,8 @@ def run_cli(
     *,
     dry_run: bool = False,
     initial_goal: str | None = None,
-    domain_path: str | Path = DEFAULT_DOMAIN_PATH,
-    problem_path: str | Path = DEFAULT_PROBLEM_PATH,
+    domain_path: str | Path | None = None,
+    problem_path: str | Path | None = None,
     output_dir: str | Path = DEFAULT_OUTPUT_DIR,
 ) -> int:
     """Run the planning CLI loop or execute a single ``initial_goal``."""
